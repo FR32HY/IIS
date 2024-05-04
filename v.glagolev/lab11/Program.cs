@@ -12,9 +12,9 @@ namespace lr11
 			StreamReader f_in = new StreamReader("data_example_small.csv");
 
 #if !DEBUG
-		TextWriter save_out = Console.Out;
-		var new_out = new StreamWriter(@"lr11_output.txt");
-		Console.SetOut(new_out);
+			TextWriter save_out = Console.Out;
+			var new_out = new StreamWriter(@"lr11_output.txt");
+			Console.SetOut(new_out);
 #endif
 			List<Person> all = new List<Person>();
 
@@ -42,8 +42,8 @@ namespace lr11
 			//1.Найдем количество пользователей мужского и женского пола
 			Console.WriteLine("****** Задача 1 **********");
 			int mCount = all.FindAll(p => p.Gender == GenderType.Male).ToList().Count;
-			Console.WriteLine("KonH4ecTBO мужчин: {0}", mCount);
-			Console.WriteLine("KonM4ecTBO женщин: {0}", all.Count - mCount);
+			Console.WriteLine("Koличество мужчин: {0}", mCount);
+			Console.WriteLine("Количество женщин: {0}", all.Count - mCount);
 
 			//2.Требуется найти самую высокую зарплату среди женщин и среди мужчин (вывести этих пользователей)
 			Console.WriteLine("****** Задача 2 **********");
@@ -98,8 +98,8 @@ namespace lr11
 			m_nochildren.ToString("C", f), f_nochildren.ToString("C", f));
 
 #if !DEBUG
-		Console.SetOut(save_out);
-		new_out.Close();
+			Console.SetOut(save_out);
+			new_out.Close();
 #else
 			Console.ReadKey();
 #endif
